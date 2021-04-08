@@ -17,5 +17,7 @@
 
 <img src="https://user-images.githubusercontent.com/68391767/113690321-3b92b380-9706-11eb-9e11-17554b459863.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/113690334-3f263a80-9706-11eb-9a4c-48ff4b412e86.gif" width="300">
 
+✅ 아이디 만드는 창(두번째)에서 비밀번호와 비밀번호 확인을 다르게 입력하면 alert 창을 띄움
 
+<img src="https://user-images.githubusercontent.com/68391767/114045054-b30d4200-98c2-11eb-9537-71b0a66e1982.png" width="300">
 
