@@ -31,7 +31,7 @@ class ThirdViewController: UIViewController {
     @IBAction func okButtonClicked(_ sender: Any) {
         // 돌아가기
        
-       // self.dismiss(animated: true, completion: nil)
+       self.dismiss(animated: true, completion: nil)
        
         
     }

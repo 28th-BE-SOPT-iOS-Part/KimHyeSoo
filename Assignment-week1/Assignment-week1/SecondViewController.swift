@@ -38,8 +38,10 @@ class SecondViewController: UIViewController {
             ThirdVC.name = emailTextField.text
             
             ThirdVC.modalPresentationStyle = .fullScreen
-            self.present(ThirdVC,animated: true, completion: nil)
-            
+            //self.present(ThirdVC,animated: true, completion: nil)
+            self.present(ThirdVC, animated:true){
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
         

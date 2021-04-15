@@ -153,7 +153,6 @@
                                 </state>
                                 <connections>
                                     <action selector="okButtonClicked:" destination="l8Z-FW-3OW" eventType="touchUpInside" id="Xpy-gM-X6g"/>
-                                    <segue destination="sPM-Qt-8xv" kind="unwind" unwindAction="unwindToFirst:" id="muB-xU-aBz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="환영합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llT-Qy-DgD">
@@ -179,7 +178,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avL-WK-aXj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="sPM-Qt-8xv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2473.913043478261" y="137.94642857142856"/>
         </scene>
