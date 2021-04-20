@@ -113,7 +113,7 @@ superView의 frame 자체가 변경되었을 때, view의 frame을 변경하는 
 
 해당되는 Constraint 를 선택하면 우측 Inspector 창에 아래와 같이 나오게 됩니다.
 
-![image](https://user-images.githubusercontent.com/68391767/115362413-77487580-a1fc-11eb-85a8-86498620912c.png)
+![image](https://user-images.githubusercontent.com/68391767/115362381-6ef03a80-a1fc-11eb-848b-adc6c2e13692.png)
 
 1. FirstItem.Attribute1 은 View3.Width
 2. SecondItem.Attribute2 는 View1.Width
@@ -122,7 +122,9 @@ superView의 frame 자체가 변경되었을 때, view의 frame을 변경하는 
 
 위 내용의 의미는, View3의 Width 가 View1의 Width 크기의 `1배 + 0` 만큼이라는 이야기 입니다.
 
-![image](https://user-images.githubusercontent.com/68391767/115362381-6ef03a80-a1fc-11eb-848b-adc6c2e13692.png)
+
+
+![image](https://user-images.githubusercontent.com/68391767/115362413-77487580-a1fc-11eb-85a8-86498620912c.png)
 
 Constant → 30, Multiplier → 1:2으로 바꾼 후,
 
