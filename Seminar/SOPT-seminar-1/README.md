@@ -194,3 +194,85 @@ Cocoa Touch Class를 새로 생성하여 UIViewController를 상속받는 클래
 
 - coverVertical - 아래에서 나와 뷰를 올리는 방식
 - crossDissolve - 뷰가 교차되면서 전환되는 방식
+
+<br><br>
+
+# 화면전환 - Navigation
+
+Navigation (네비게이션)은 **깊이와 흐름**을 나타내기 위해 사용하는 구조로 "드릴 다운 인터페이스" 라고 하기도 합니다.
+
+- 특정 버튼을 눌렀을 때 화면이 오른쪽으로 넘어간다면 ? → Navigation Controller 를 통해 표현할 수 있습니다! (아이폰의 설정창에서 항목을 눌렀을때 오른쪽으로 넘어가는 바로 그것입니다,,)
+- 현재 화면에서 본인이 어느 위치에 있는지 알 수 있도록 해야합니다.
+- Navigation 방식은 선택지를 만나 더 깊이 들어가는 역할에 적합한 방식입니다!!
+
+<br>
+
+## 네비게이션의 주요 스타일
+
+### 1. 계층 네비계이션
+
+### 2. 플랫 네비게이션
+
+### 3. 경험 중심 네비게이션
+
+<br>
+
+## Navigation Controller ?
+
+Navigation Controller는 화면을 나타내는 View Controller를 관리하는 역할을 하는데, 이때 뷰 컨트롤러를 `Navigation Stack` 형태로 관리 하게 됩니다.  
+
+- 가장 먼저 스택에 추가된 뷰컨은 Root View Controller가 되고
+- 이후에 쌓인 뷰컨은 차례대로 아래서부터 **스택형태**로 쌓입니다.
+- Navigaion controller 안에 있는 뷰컨들은 '컨텐츠 뷰 컨트롤러' 라고 부르기도 하고, Navigation controller는 '컨테이너 뷰 컨드롤러'라고 하기도 합니다.
+
+## push, pop을 이용한 화면전환
+
+Navigation 을 이용한 화면전환을 할때는 스택형태로 구현되어있기 때문에 present와 dismiss대신  push (`pushViewController` )와 pop (`popViewController`)를 사용합니다.
+
+### 1) push를 이용해 스택에 뷰컨 쌓기
+
+![image](https://user-images.githubusercontent.com/68391767/115566651-662f5f80-a2f5-11eb-97ac-30e606108b76.png)
+
+먼저 첫 번째 뷰컨을 선택해 `[Embed in View] - [Navigation Controller]` 를 선택해줍니다. 
+
+![image](https://user-images.githubusercontent.com/68391767/115566719-75aea880-a2f5-11eb-948b-9b4489e7a8e7.png)
+
+
+그럼 요렇게 Navigation bar가 생기는데, 필요가 없다면 우측 인스펙터창에서 `Shows Navigation Bar`를 체크 해제 해줍니다.
+
+그리고 Assistant를 열어서 Button 을 @IBAction으로 코드에 연결해주고
+
+```swift
+@IBAction func modalButtonClicked(_ sender: Any) {
+    
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as? SecondViewController else { return }
+       
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
+```
+
+이렇게 pushViewController를 이용해 화면 전환을 해 줍니다~! guard 어쩌구 코드 소개는 (...)
+
+빌드해보면 잘 실행된답니다,,
+
+![image](https://user-images.githubusercontent.com/68391767/115566763-819a6a80-a2f5-11eb-8b83-5b57eaf2eba9.png)
+
+### 2) pop을 이용해 최상단 뷰컨 빼기
+
+최상단 뷰컨에 button을 넣고 @IBAction 으로 연결해줍니다. (저는 backButtonClicked 라는 이름으로 연결해줬습니다)
+
+![image](https://user-images.githubusercontent.com/68391767/115566790-8a8b3c00-a2f5-11eb-9a2a-5842b28f7cd1.png)
+
+두번째 뷰컨의 Assistant를 열어 아래 코드를 작성해줍니다. 
+
+```swift
+@IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    
+    }
+```
+
+Navigation 화면전환 방식에서는 `popViewController`를 통해 제일 상단의 뷰컨을 삭제합니다. 자료구조 스택에서도 가장 위에 있는것을 뺄때 pop을 사용하니 이거와 연결해서 생각해주면 되겠죠?!
+
+![image](https://user-images.githubusercontent.com/68391767/115566823-90811d00-a2f5-11eb-9a0e-6276211b1eae.png)
