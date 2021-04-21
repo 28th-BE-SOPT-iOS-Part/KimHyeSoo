@@ -276,3 +276,83 @@ Navigation 을 이용한 화면전환을 할때는 스택형태로 구현되어�
 Navigation 화면전환 방식에서는 `popViewController`를 통해 제일 상단의 뷰컨을 삭제합니다. 자료구조 스택에서도 가장 위에 있는것을 뺄때 pop을 사용하니 이거와 연결해서 생각해주면 되겠죠?!
 
 ![image](https://user-images.githubusercontent.com/68391767/115566823-90811d00-a2f5-11eb-9a0e-6276211b1eae.png)
+
+<br><br>
+
+# Property에 접근해 데이터 넘기기
+
+## Textfield (1VC) 데이터 → Label (2VC)으로 넘겨보기
+
+먼저 첫번째 뷰컨에 textfield와 Button을 추가하고, 두번째 뷰컨에는 Label과 이전화면으로 돌아가는 Button을 추가해줍니다. 여기서 우리는 **첫번째 뷰컨의 Textfield에 입력한 내용을 두번째뷰컨의 Label에서 표시되도록 할 것**입니다.
+
+![image](https://user-images.githubusercontent.com/68391767/115582600-17d58d00-a304-11eb-95bb-2d18811778e1.png)
+
+이제 두번째 뷰컨의 Assistant를 열어 코드를 작성해줍니다.
+
+```swift
+// SecondViewController.swift
+import UIKit
+
+class SecondViewController: UIViewController {
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    var message : String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setLabel() // 화면이 로드될때 바로 setLabel 함수를 실행시킴.
+    }
+    
+    func setLabel(){
+        if let msg = self.message {
+            messageLabel.text = msg
+        }
+    }
+
+    @IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+```
+
+설명을 좀 해보자면,,
+
+1. 추가한 Label은 `messageLabel`이라는 이름을 가진 @IBOutlet 변수로 선언을 하고 연결해줍니다.
+2. `String?` 타입의 변수 `message`를 선언해줍니다. (textfield로 받는 값이 빈 값일수도 있어서 인가..?) → 이는 첫번째 뷰컨에서 `textfield`에 입력한 내용을 받아오는데에 사용된다. 첫번째 뷰컨에 두번째 뷰컨 인스턴스를 만들었으니 `message`에도 접근가능합니다.
+3. `setLabel()` 함수를 만듭니다. → if-let구문을 이용해 받아온 message의 내용이 nil 이 아니라면, 라벨의 텍스트를 바꿔줍니다. / 여기서 self.message 에서 self는 ? - message가 **자신의 클래스** 안의 message라는 변수를 가리키게 되므로 self.message라고 표현해준 것 같다...
+4. **딱 화면이 전환될 때** setLabel()이 실행되어 라벨의 내용이 바뀌어야 하니까 `viewDidLoad()`함수 내부에 `setLabel()` 함수를 넣어주면 됩니다!
+
+여기까지는 두 번째 뷰컨에서 진행하고, 이제 첫 번째 뷰컨의 Assistant를 열어 코드를 작성해줍니다.
+
+```swift
+import UIKit
+
+class FirstViewController: UIViewController {
+
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func modalButtonClicked(_ sender: Any) {
+    
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as? SecondViewController else { return }
+        
+        nextVC.message = messageTextField.text
+       
+        self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
+}
+```
+
+여기서 봐야될건 `nextVC.message = messageTextField.text` 여기인데,,
+
+1. 먼저 바로 위의 코드에서 nextVC라고 하는 두번째 뷰컨을 가리키는 친구를 만들었으니, 그 두번째 뷰컨에 있는 message라는 변수에 접근할 수 있습니다! 
+2. 그러니 현재 뷰컨에 있는  `messageTextField`의 내용을 가져와서 두번째 뷰컨의 `message`에 저장할 수 있게됩니다.!!
+3. textfield의 값이 빈값일 수도 있는데,, 왜 이번에는 지난번과 달리 optional 처리(?)를 해주지 않은 걸까요,,? → nextVC의 message가 그냥 String타입이 아니라, `String?` 타입이라서 그런 듯 합니다,,,   ?이 붙은 optional 변수는 nil 값이 올 수도 있다는 것을 말해주는 것이니까요~
+
+### 자랑스러운 결과물
+
+![image](https://user-images.githubusercontent.com/68391767/115582655-2328b880-a304-11eb-8628-0ba7618766fb.png)
