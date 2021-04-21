@@ -75,3 +75,122 @@ View에 존재하는 요소와 Controller를 연결하는 **변수의 개념**�
     ```swift
     titleLabel.~~~~~ 
     ```
+
+<br><br>
+
+# 화면전환 - Modal
+
+모달은 특정 위치를 누르면 **기존의 창 위에 새로운 창이 뜨는 것**을 말합니다. Modal 방식은 **주로 이용자들의 이목을 집중시켜야 하는 화면을 띄울때** 사용합니다.
+
+- 간략한 정보, **흐름에서 벗어난 정보**를 보여줄때 사용합니다.
+
+
+## 1. Seuge를 이용하여 Modal 전환하기
+
+먼저 두 View Controller를 생성한 후, 첫 뷰컨에 Button을 삽입합니다.
+
+![image](https://user-images.githubusercontent.com/68391767/115565452-58c5a580-a2f4-11eb-9171-60fff9b1e992.png)
+
+첫번째 뷰컨에 삽입한 Button을 클릭하고 모달로 띄우고자 하는 화면에 `Control + 드래그` 해줍니다.
+
+![image](https://user-images.githubusercontent.com/68391767/115565507-65e29480-a2f4-11eb-9366-d9ea6f20cbc4.png)
+
+
+그러면 이런게 뜰텐데,, 하나씩 살펴보면
+
+- `Show` : Navigation Controller가 연결되어 있다면 Push처리를 하고, 아닌 경우에는 Present Modally로 처리합니다.
+- `Show Detail` : 아이패드에서 사용하는 방식으로, Push 대신 Replace 방식을 사용합니다.
+- `Present Modally` : Present 방식의 화면 전환으로, Modal Style, Transition Style 을 변경해서 다양한 방식이 가능합니다.
+- `Present As Popover` : 아이패드에서 사용되는 전환방식입니다. 작은 Popup 형태의 View를 띄웁니다.
+
+우리는 Modal 방식 (present)을 이용할 것이므로, **Present Modally**를 선택합니다!
+
+![image](https://user-images.githubusercontent.com/68391767/115565553-6e3acf80-a2f4-11eb-8538-acec6ca85aa4.png)
+
+그러면 화살표 표시와 함께 다음 화면이 모달창으로 전환됩니다!! 여기서 화살표가 바로! Seuge 입니다.
+
+<br>
+
+## 2. 코드를 이용하여 Modal 전환하기 - present, dismiss
+
+`present메서드`를 이용해 Modal 뷰를 띄우고, `dismiss 메서드`를 통해 띄워진 모달 뷰를 사라지게 합니다.
+
+** 코드를 이용한 방식은 Seuge와 함께 사용하면 오류가 날 수 있습니다.
+
+swift 코드를 이용하여 Modal로 화면을 전환하기 위해서는 각 뷰컨마다 class를 하나씩 생성해서 연결해줘야 합니다.
+
+Cocoa Touch Class를 새로 생성하여 UIViewController를 상속받는 클래스 두 개를 만들어 줍니다.
+
+![image](https://user-images.githubusercontent.com/68391767/115565586-7561dd80-a2f4-11eb-8bd0-ebf55b5b7dd3.png)
+
+그리고 두 View Controller 모두 코드와 스토리보드와 연결해주기 위해 Custom Class에 클래스명을 작성해줍니다. 아래에 있는 Storyboard ID도 동일하게 작성해줍니다.
+
+![image](https://user-images.githubusercontent.com/68391767/115565634-7e52af00-a2f4-11eb-95f8-b8575c104d88.png)
+
+<br>
+
+### 2-1) present 사용하기
+
+그리고 첫번째 뷰컨의 Assistant를 열어 코드를 작성해줍니다! Button을 Control+드래그 해서 IBAction 을 만들어준 후 코드를 작성합니다.
+
+```swift
+@IBAction func modalButtonClicked(_ sender: Any) {
+    
+  guard let nextVC = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as? SecondViewController else { return }
+     
+  self.present(nextVC, animated: true, completion: nil)
+        
+}
+```
+
+`guard 구문`을 통해 SecondViewController를 nextVC에 연결해주고 `.present 메서드`를 통해 nextVC를 모달로 띄워줍니다.
+
+
+이후 코드와 연결한 버튼을 클릭하면 다음 뷰컨으로 잘 넘어가는 것을 볼 수 있습니다!
+
+<br>
+
+### 2-2) dismiss를 이용하여 뒤로가기
+
+먼저 두 번째 뷰컨에 뒤로가기 버튼을 만들고 @IBAction 으로 연결해줍니다.
+
+![image](https://user-images.githubusercontent.com/68391767/115565844-b1953e00-a2f4-11eb-95c2-6cf467cb9e41.png)
+
+그리고 Button과 연결한 메서드에 다음과 같은 코드를 작성해줍니다.
+
+```swift
+@IBAction func backButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+```
+
+`dismiss 메서드`는 present로 띄워진 뷰를 사라지게 하는 메서드입니다.
+
+<br>
+
+## Modal 전환방식 바꾸기
+
+### modalPresentationStyle
+
+새로운 Modal창을 어떻게 보여줄지 옵션을 이용해 설정할 수 있습니다.
+
+```swift
+(뷰컨인스턴스).modalPresentationStyle = .(옵션)
+```
+
+- automatic - 시스템에서 정한 기본 옵션 (위를 남기고 덮음)
+- fullScreen - 위를 남기기 않고 새로운 모달로 창을 끝까지 덮음
+- overCurrentContext - 새로운 모달창이 투명하면 이전 뷰도 함께 보임
+
+<br>
+
+### modalTransitionStyle
+
+새로운 Modal창을 전환하는 방법을 옵션을 이용해 설정할 수 있습니다.
+
+```swift
+(뷰컨인스턴스).modalTransitionStyle = .(옵션)
+```
+
+- coverVertical - 아래에서 나와 뷰를 올리는 방식
+- crossDissolve - 뷰가 교차되면서 전환되는 방식
