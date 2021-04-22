@@ -15,30 +15,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카카오톡을 시작합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-8L-U9d">
-                                <rect key="frame" x="102" y="123" width="222" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오톡을 시작합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-8L-U9d">
+                                <rect key="frame" x="40" y="124" width="334" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   사용하던 카카오 계정이 있다면            이메일 혹은 전화번호로 로그인해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugy-3j-rwg">
-                                <rect key="frame" x="77" y="139" width="273" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qPS-wY-pFi">
-                                <rect key="frame" x="29" y="297" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qPS-wY-pFi">
+                                <rect key="frame" x="25" y="296.5" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDX-Ao-iVI">
-                                <rect key="frame" x="29" y="352" width="365" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDX-Ao-iVI">
+                                <rect key="frame" x="25" y="350.5" width="364" height="45"/>
                                 <color key="backgroundColor" red="0.91622814119170981" green="0.91622814119170981" blue="0.91622814119170981" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fnA-BY-fe0"/>
+                                </constraints>
                                 <state key="normal" title="카카오계정 로그인">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -46,16 +39,17 @@
                                     <action selector="loginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LHB-xp-G2Q"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 혹은 전화번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-Ja-S7X">
-                                <rect key="frame" x="29" y="255" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 혹은 전화번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-Ja-S7X">
+                                <rect key="frame" x="25" y="253.5" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1L-00-o8n">
-                                <rect key="frame" x="31" y="405" width="365" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1L-00-o8n">
+                                <rect key="frame" x="25" y="404.5" width="364" height="45"/>
                                 <color key="backgroundColor" red="0.91622814119999996" green="0.91622814119999996" blue="0.91622814119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ptq-YP-ezH"/>
+                                </constraints>
                                 <state key="normal" title="새로운 카카오 계정 만들기">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -63,8 +57,34 @@
                                     <action selector="joinButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yn-Wa-PjS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="         사용하던 카카오 계정이 있다면    이메일 혹은 전화번호로 로그인해 주세요." textAlignment="natural" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugy-3j-rwg">
+                                <rect key="frame" x="55" y="161" width="304" height="42.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".AppleKoreanFont" pointSize="19"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ugy-3j-rwg" secondAttribute="trailing" constant="55" id="0fG-Dh-8AC"/>
+                            <constraint firstItem="dcn-Ja-S7X" firstAttribute="top" secondItem="Ugy-3j-rwg" secondAttribute="bottom" constant="50" id="0gi-y1-ktF"/>
+                            <constraint firstItem="m1L-00-o8n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="13e-TY-Fat"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qPS-wY-pFi" secondAttribute="trailing" constant="25" id="1YX-Cc-lOU"/>
+                            <constraint firstItem="Ugy-3j-rwg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="83q-jl-Myt"/>
+                            <constraint firstItem="Tbu-8L-U9d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Bfn-3r-SX0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tbu-8L-U9d" secondAttribute="trailing" constant="40" id="IEm-j1-oj5"/>
+                            <constraint firstItem="ZDX-Ao-iVI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="KdO-Gg-gqf"/>
+                            <constraint firstItem="qPS-wY-pFi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Pdl-lA-llH"/>
+                            <constraint firstItem="Tbu-8L-U9d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="TI8-9J-iAE"/>
+                            <constraint firstItem="m1L-00-o8n" firstAttribute="top" secondItem="ZDX-Ao-iVI" secondAttribute="bottom" constant="9" id="VrF-Lw-fFx"/>
+                            <constraint firstItem="ZDX-Ao-iVI" firstAttribute="top" secondItem="qPS-wY-pFi" secondAttribute="bottom" constant="20" id="eJN-eJ-LXO"/>
+                            <constraint firstItem="qPS-wY-pFi" firstAttribute="top" secondItem="dcn-Ja-S7X" secondAttribute="bottom" constant="9" id="kEp-5s-a67"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZDX-Ao-iVI" secondAttribute="trailing" constant="25" id="lF3-dS-4je"/>
+                            <constraint firstItem="dcn-Ja-S7X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="n54-FE-VuR"/>
+                            <constraint firstItem="Ugy-3j-rwg" firstAttribute="top" secondItem="Tbu-8L-U9d" secondAttribute="bottom" constant="7" id="sjs-gj-krr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m1L-00-o8n" secondAttribute="trailing" constant="25" id="wak-09-LSM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dcn-Ja-S7X" secondAttribute="trailing" constant="25" id="xJz-H0-TfR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="4mN-ng-wik"/>
@@ -85,35 +105,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카카오톡을 시작합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU4-36-W0G">
-                                <rect key="frame" x="105" y="127" width="222" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오톡을 시작합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU4-36-W0G">
+                                <rect key="frame" x="40" y="124" width="334" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 혹은 전화번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w19-uy-Btl">
-                                <rect key="frame" x="25" y="251" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 혹은 전화번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w19-uy-Btl">
+                                <rect key="frame" x="25" y="251" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A0S-gl-Aq6">
-                                <rect key="frame" x="25" y="293" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A0S-gl-Aq6">
+                                <rect key="frame" x="25" y="293" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NDy-t5-JTn">
-                                <rect key="frame" x="25" y="335" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NDy-t5-JTn">
+                                <rect key="frame" x="25" y="335" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-Yc-Ykg">
-                                <rect key="frame" x="25" y="377" width="365" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-Yc-Ykg">
+                                <rect key="frame" x="25" y="377" width="364" height="45"/>
                                 <color key="backgroundColor" red="0.91622814119999996" green="0.91622814119999996" blue="0.91622814119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bej-xp-ENf"/>
+                                </constraints>
                                 <state key="normal" title="새로운 카카오계정 만들기">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -123,6 +141,23 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OIS-nM-WGm" firstAttribute="trailing" secondItem="A0S-gl-Aq6" secondAttribute="trailing" constant="25" id="9SX-7a-WBG"/>
+                            <constraint firstItem="OIS-nM-WGm" firstAttribute="trailing" secondItem="NDy-t5-JTn" secondAttribute="trailing" constant="25" id="FKL-L2-EH0"/>
+                            <constraint firstItem="w19-uy-Btl" firstAttribute="leading" secondItem="OIS-nM-WGm" secondAttribute="leading" constant="25" id="GN1-Dp-ocC"/>
+                            <constraint firstItem="OIS-nM-WGm" firstAttribute="trailing" secondItem="Voe-Yc-Ykg" secondAttribute="trailing" constant="25" id="GSO-Sx-6KP"/>
+                            <constraint firstItem="pU4-36-W0G" firstAttribute="leading" secondItem="OIS-nM-WGm" secondAttribute="leading" constant="40" id="HvQ-EA-pgP"/>
+                            <constraint firstItem="A0S-gl-Aq6" firstAttribute="leading" secondItem="OIS-nM-WGm" secondAttribute="leading" constant="25" id="KVQ-Yb-ymk"/>
+                            <constraint firstItem="A0S-gl-Aq6" firstAttribute="top" secondItem="w19-uy-Btl" secondAttribute="bottom" constant="8" id="Rh0-Yy-nWv"/>
+                            <constraint firstItem="OIS-nM-WGm" firstAttribute="trailing" secondItem="w19-uy-Btl" secondAttribute="trailing" constant="25" id="axV-px-flw"/>
+                            <constraint firstItem="pU4-36-W0G" firstAttribute="top" secondItem="OIS-nM-WGm" secondAttribute="top" constant="80" id="eGn-m6-f5U"/>
+                            <constraint firstItem="Voe-Yc-Ykg" firstAttribute="top" secondItem="NDy-t5-JTn" secondAttribute="bottom" constant="8" id="iEk-Qn-i0M"/>
+                            <constraint firstItem="NDy-t5-JTn" firstAttribute="top" secondItem="A0S-gl-Aq6" secondAttribute="bottom" constant="8" id="oYm-9q-9iu"/>
+                            <constraint firstItem="OIS-nM-WGm" firstAttribute="trailing" secondItem="pU4-36-W0G" secondAttribute="trailing" constant="40" id="omm-OR-geM"/>
+                            <constraint firstItem="Voe-Yc-Ykg" firstAttribute="leading" secondItem="OIS-nM-WGm" secondAttribute="leading" constant="25" id="t6o-mJ-guF"/>
+                            <constraint firstItem="w19-uy-Btl" firstAttribute="top" secondItem="pU4-36-W0G" secondAttribute="bottom" constant="97" id="vbk-U0-nQz"/>
+                            <constraint firstItem="NDy-t5-JTn" firstAttribute="leading" secondItem="OIS-nM-WGm" secondAttribute="leading" constant="25" id="yIA-AW-EyQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OIS-nM-WGm"/>
                     </view>
                     <connections>
