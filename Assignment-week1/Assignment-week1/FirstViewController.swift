@@ -22,14 +22,33 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        guard let ThirdVC = self.storyboard?.instantiateViewController(identifier: "ThirdViewController")
-        as? ThirdViewController else {return}
         
+        
+        let storyboard = UIStoryboard(name: "KakaoHome", bundle: nil)
+                
+        guard let mainVC = storyboard.instantiateViewController(identifier: "MainTabBarController") as? MainTabBarController
+        else {return}
+                
         if emailTextField.text != "", passwordTextField.text != "" {
-            ThirdVC.name = emailTextField.text
-            ThirdVC.modalPresentationStyle = .fullScreen
-            self.present(ThirdVC, animated: true, completion: nil)
+             self.navigationController?.pushViewController(mainVC, animated: true)
         }
+        else {
+            let alert = UIAlertController(title: "오류!", message: "아이디와 비밀번호를 모두 입력해주세요", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                
+            }
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
+        }
+        
+//        guard let ThirdVC = self.storyboard?.instantiateViewController(identifier: "ThirdViewController")
+//        as? ThirdViewController else {return}
+//
+//        if emailTextField.text != "", passwordTextField.text != "" {
+//            ThirdVC.name = emailTextField.text
+//            ThirdVC.modalPresentationStyle = .fullScreen
+//            self.present(ThirdVC, animated: true, completion: nil)
+//        }
         
         
         
