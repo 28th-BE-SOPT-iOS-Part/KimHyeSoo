@@ -19,7 +19,7 @@
                                 <rect key="frame" x="13" y="104" width="59" height="58"/>
                                 <state key="normal" image="friendtabProfileImg"/>
                                 <connections>
-                                    <segue destination="BsT-63-Q1Z" kind="presentation" modalPresentationStyle="fullScreen" id="hsT-bL-i6v"/>
+                                    <segue destination="BsT-63-Q1Z" kind="presentation" modalPresentationStyle="overCurrentContext" id="hsT-bL-i6v"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-u6-gjz">

@@ -137,6 +137,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52941176470588236" green="0.56862745098039214" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iTU-ZY-Feo" secondAttribute="trailing" id="1Jl-9N-RpG"/>
                             <constraint firstItem="iTU-ZY-Feo" firstAttribute="leading" secondItem="nxD-1s-bet" secondAttribute="leading" id="3Fz-y2-cMQ"/>
@@ -153,9 +154,21 @@
                             <constraint firstItem="iTU-ZY-Feo" firstAttribute="top" secondItem="pdk-Sq-NGX" secondAttribute="bottom" constant="42" id="uvA-If-1WI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Upd-24-1sj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="33p-5q-B06" appends="YES" id="KM8-bH-wVb"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="modalView" destination="nxD-1s-bet" id="LiW-6N-0vg"/>
+                        <outlet property="panGestureRecognizer" destination="33p-5q-B06" id="eOV-WT-cAh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFk-cH-I80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="33p-5q-B06">
+                    <connections>
+                        <action selector="panAction:" destination="Iut-wl-oNE" id="Myy-tn-U6W"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="226" y="171"/>
         </scene>
