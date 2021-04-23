@@ -1,3 +1,16 @@
+
+|Week|내용|과제결과|
+|:---:|:---------------|:-------------------|
+|1주차|iOS 기초, H.I.G를 통한 컴포넌트의 이해, 화면 전환| [1주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#1%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---%EA%B8%B0%EB%B3%B8ui%EC%9A%94%EC%86%8C-%ED%99%94%EB%A9%B4%EC%A0%84%ED%99%98) |
+|2주차|Autolayout을 통한 기초 UI구성, Scroll View의 이해| [2주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---view-autolayout-scrollview) ||
+|3주차|TableView, CollectionView, 데이터 전달 방식||
+|4주차|Cocoapods & Networking + 솝커톤 전 보충 세미나||
+|5주차|디자인 합동 세미나||
+|6주차|서버 합동 세미나 + 솝커톤||
+|7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충||
+|8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드||
+
+
 #  1주차 과제 - 기본UI요소, 화면전환
 
 ![image](https://user-images.githubusercontent.com/68391767/113694639-f9b83c00-970a-11eb-8f81-950f0d910a02.png)
