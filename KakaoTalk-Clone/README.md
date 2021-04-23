@@ -21,3 +21,24 @@
 
 <img src="https://user-images.githubusercontent.com/68391767/114045054-b30d4200-98c2-11eb-9537-71b0a66e1982.png" width="300">
 
+<br><br>
+
+#  2주차 과제 - View, AutoLayout, ScrollView
+
+![image](https://user-images.githubusercontent.com/68391767/115887914-59457400-a48d-11eb-9a22-40aca6e48634.png)
+
+## 결과
+
+### 1. 과제결과
+
+<img src="https://user-images.githubusercontent.com/68391767/115889180-aaa23300-a48e-11eb-904b-2b5a2653ee50.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/115888859-5b5c0280-a48e-11eb-94f5-388dc2b55df3.gif" width="300">
+
+### 2. 모두 입력x, 비밀번호 != 비밀번호확인 일때 alert
+
+<img src="https://user-images.githubusercontent.com/68391767/115888689-294aa080-a48e-11eb-8aed-c20a3f07e61c.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/115888602-0fa95900-a48e-11eb-9d9e-b08d9880cfbc.gif" width="300">
+
+
+
+
+
+
