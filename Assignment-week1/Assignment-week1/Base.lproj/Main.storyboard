@@ -57,7 +57,7 @@
                                     <action selector="joinButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yn-Wa-PjS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="         사용하던 카카오 계정이 있다면    이메일 혹은 전화번호로 로그인해 주세요." textAlignment="natural" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugy-3j-rwg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        사용하던 카카오 계정이 있다면        이메일 혹은 전화번호로 로그인해 주세요." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugy-3j-rwg">
                                 <rect key="frame" x="55" y="161" width="304" height="42.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".AppleKoreanFont" pointSize="19"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -214,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avL-WK-aXj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2473.913043478261" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1042" y="894"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bCD-Z0-F5U">

@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sJq-Wa-Sua"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="message" catalog="system" id="vgg-Sg-Whp"/>
+                    <tabBarItem key="tabBarItem" title="" image="messageTabIcon" selectedImage="messageTabIconSelected" id="vgg-Sg-Whp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWt-S7-Jb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +26,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="messageTabIcon" width="20.5" height="19.5"/>
+        <image name="messageTabIconSelected" width="20.5" height="19.5"/>
     </resources>
 </document>

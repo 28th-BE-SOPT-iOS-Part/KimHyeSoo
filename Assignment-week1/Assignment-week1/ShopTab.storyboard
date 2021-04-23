@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="b5V-oR-DgT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="bag" catalog="system" id="6nS-Jf-JW2"/>
+                    <tabBarItem key="tabBarItem" title="" image="shopTabIcon" selectedImage="shopTabIconSelected" id="6nS-Jf-JW2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iB-wb-HFS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +26,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="shopTabIcon" width="19.5" height="19"/>
+        <image name="shopTabIconSelected" width="19.5" height="19"/>
     </resources>
 </document>

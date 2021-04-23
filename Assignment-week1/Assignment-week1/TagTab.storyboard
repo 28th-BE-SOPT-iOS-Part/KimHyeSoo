@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Vbe-hy-KVZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="number" catalog="system" id="WQ1-iB-xL2"/>
+                    <tabBarItem key="tabBarItem" title="" image="searchTabIcon" selectedImage="searchTabIconSelected" id="WQ1-iB-xL2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bC2-jn-HHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +26,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="number" catalog="system" width="128" height="124"/>
+        <image name="searchTabIcon" width="15" height="17.5"/>
+        <image name="searchTabIconSelected" width="15" height="17.5"/>
     </resources>
 </document>

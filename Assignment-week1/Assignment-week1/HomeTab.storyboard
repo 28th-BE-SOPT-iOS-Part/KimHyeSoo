@@ -38,7 +38,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="43n-fK-mxJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="0ev-Gy-Bdg"/>
+                    <tabBarItem key="tabBarItem" title="" image="friendTabIcon" selectedImage="friendTabIconSelected" id="0ev-Gy-Bdg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvw-Yn-vzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -55,7 +55,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="friendTabIcon" width="18" height="20"/>
+        <image name="friendTabIconSelected" width="18" height="20"/>
         <image name="friendtabProfileImg" width="59" height="58"/>
-        <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>

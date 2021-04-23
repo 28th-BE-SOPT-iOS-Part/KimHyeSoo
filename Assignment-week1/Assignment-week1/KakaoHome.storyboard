@@ -64,7 +64,7 @@
         <scene sceneID="CzK-Rq-eCl">
             <objects>
                 <viewControllerPlaceholder storyboardName="ShopTab" id="Xf3-w9-GJL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fua-9V-76C"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="shopTabIconSelected" id="fua-9V-76C"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ID5-F2-FBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,4 +81,7 @@
             <point key="canvasLocation" x="1128" y="535"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shopTabIconSelected" width="19.5" height="19"/>
+    </resources>
 </document>
