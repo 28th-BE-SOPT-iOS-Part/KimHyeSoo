@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3el-dC-xzM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Tab View Controller-->
+        <scene sceneID="0pf-Z6-kJM">
+            <objects>
+                <viewController storyboardIdentifier="HomeTabViewController" id="3el-dC-xzM" customClass="HomeTabViewController" customModule="Assignment_week1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z7T-q3-Kod">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgc-er-Ap4">
+                                <rect key="frame" x="13" y="104" width="59" height="58"/>
+                                <state key="normal" image="friendtabProfileImg"/>
+                                <connections>
+                                    <segue destination="BsT-63-Q1Z" kind="presentation" modalPresentationStyle="overCurrentContext" id="hsT-bL-i6v"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-u6-gjz">
+                                <rect key="frame" x="14" y="59" width="39" height="27"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wLI-u6-gjz" firstAttribute="leading" secondItem="43n-fK-mxJ" secondAttribute="leading" constant="14" id="RNl-JC-uT9"/>
+                            <constraint firstItem="wLI-u6-gjz" firstAttribute="top" secondItem="43n-fK-mxJ" secondAttribute="top" constant="15" id="Ry9-vl-QZP"/>
+                            <constraint firstItem="Zgc-er-Ap4" firstAttribute="top" secondItem="wLI-u6-gjz" secondAttribute="bottom" constant="18" id="TVv-e7-56r"/>
+                            <constraint firstItem="Zgc-er-Ap4" firstAttribute="leading" secondItem="43n-fK-mxJ" secondAttribute="leading" constant="13" id="pSj-0F-Uh1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="43n-fK-mxJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="friendTabIcon" selectedImage="friendTabIconSelected" id="0ev-Gy-Bdg"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvw-Yn-vzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="493" y="202"/>
+        </scene>
+        <!--MyTab-->
+        <scene sceneID="BYP-Vc-1yb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyTab" id="BsT-63-Q1Z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBd-ok-FHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="656"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="friendTabIcon" width="18" height="20"/>
+        <image name="friendTabIconSelected" width="18" height="20"/>
+        <image name="friendtabProfileImg" width="59" height="58"/>
+    </resources>
+</document>
