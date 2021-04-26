@@ -1,3 +1,16 @@
+
+|Week|내용|과제결과|
+|:---:|:---------------|:-------------------|
+|1주차|iOS 기초, H.I.G를 통한 컴포넌트의 이해, 화면 전환| [1주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#1%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---%EA%B8%B0%EB%B3%B8ui%EC%9A%94%EC%86%8C-%ED%99%94%EB%A9%B4%EC%A0%84%ED%99%98) |
+|2주차|Autolayout을 통한 기초 UI구성, Scroll View의 이해| [2주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---view-autolayout-scrollview) ||
+|3주차|TableView, CollectionView, 데이터 전달 방식||
+|4주차|Cocoapods & Networking + 솝커톤 전 보충 세미나||
+|5주차|디자인 합동 세미나||
+|6주차|서버 합동 세미나 + 솝커톤||
+|7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충||
+|8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드||
+
+
 #  1주차 과제 - 기본UI요소, 화면전환
 
 ![image](https://user-images.githubusercontent.com/68391767/113694639-f9b83c00-970a-11eb-8f81-950f0d910a02.png)
@@ -20,4 +33,25 @@
 ✅ 아이디 만드는 창(두번째)에서 비밀번호와 비밀번호 확인을 다르게 입력하면 alert 창을 띄움
 
 <img src="https://user-images.githubusercontent.com/68391767/114045054-b30d4200-98c2-11eb-9537-71b0a66e1982.png" width="300">
+
+<br><br>
+
+#  2주차 과제 - View, AutoLayout, ScrollView
+
+![image](https://user-images.githubusercontent.com/68391767/115887914-59457400-a48d-11eb-9a22-40aca6e48634.png)
+
+## 결과
+
+### 1. 과제결과
+
+<img src="https://user-images.githubusercontent.com/68391767/115889180-aaa23300-a48e-11eb-904b-2b5a2653ee50.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/115888859-5b5c0280-a48e-11eb-94f5-388dc2b55df3.gif" width="300">
+
+### 2. 모두 입력x, 비밀번호 != 비밀번호확인 일때 alert
+
+<img src="https://user-images.githubusercontent.com/68391767/115888689-294aa080-a48e-11eb-8aed-c20a3f07e61c.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/115888602-0fa95900-a48e-11eb-9d9e-b08d9880cfbc.gif" width="300">
+
+
+
+
+
 
