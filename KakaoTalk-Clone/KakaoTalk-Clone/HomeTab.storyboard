@@ -10,40 +10,164 @@
         <!--Home Tab View Controller-->
         <scene sceneID="0pf-Z6-kJM">
             <objects>
-                <viewController storyboardIdentifier="HomeTabViewController" id="3el-dC-xzM" customClass="HomeTabViewController" customModule="Assignment_week1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabViewController" id="3el-dC-xzM" customClass="HomeTabViewController" customModule="KakaoTalk_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z7T-q3-Kod">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgc-er-Ap4">
-                                <rect key="frame" x="13" y="104" width="59" height="58"/>
-                                <state key="normal" image="friendtabProfileImg"/>
-                                <connections>
-                                    <segue destination="BsT-63-Q1Z" kind="presentation" modalPresentationStyle="overCurrentContext" id="hsT-bL-i6v"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-u6-gjz">
-                                <rect key="frame" x="14" y="59" width="39" height="27"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hqz-17-4d6">
+                                <rect key="frame" x="0.0" y="96" width="414" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="jvA-kU-Glb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgc-er-Ap4">
+                                            <rect key="frame" x="14" y="5" width="59" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="59" id="96r-iS-DYc"/>
+                                                <constraint firstAttribute="height" constant="58" id="OPc-bL-exl"/>
+                                            </constraints>
+                                            <state key="normal" image="friendtabProfileImg"/>
+                                            <connections>
+                                                <segue destination="BsT-63-Q1Z" kind="presentation" modalPresentationStyle="overCurrentContext" id="hsT-bL-i6v"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb0-7Y-CLo">
+                                            <rect key="frame" x="84" y="40" width="186" height="14"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="인스타그램은 kimseawater">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgy-Dt-O6C">
+                                            <rect key="frame" x="83" y="15" width="55.5" height="19.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="킴씨워터">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="AppleSDGothicNeo-SemiBold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Zgc-er-Ap4" firstAttribute="top" secondItem="jvA-kU-Glb" secondAttribute="top" constant="5" id="9TQ-96-KZE"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zgc-er-Ap4" secondAttribute="bottom" constant="10" id="K4l-X2-oXu"/>
+                                        <constraint firstItem="mgy-Dt-O6C" firstAttribute="top" secondItem="jvA-kU-Glb" secondAttribute="top" constant="15" id="Meb-nL-sIN"/>
+                                        <constraint firstItem="mgy-Dt-O6C" firstAttribute="leading" secondItem="jvA-kU-Glb" secondAttribute="leading" constant="83" id="pJT-aV-Zof"/>
+                                        <constraint firstItem="zb0-7Y-CLo" firstAttribute="top" secondItem="jvA-kU-Glb" secondAttribute="top" constant="40" id="wao-Oy-peg"/>
+                                        <constraint firstItem="zb0-7Y-CLo" firstAttribute="leading" secondItem="jvA-kU-Glb" secondAttribute="leading" constant="84" id="xcW-w7-Vb7"/>
+                                        <constraint firstItem="Zgc-er-Ap4" firstAttribute="leading" secondItem="jvA-kU-Glb" secondAttribute="leading" constant="14" id="zEq-Wd-Krg"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeFriendTableViewCell" rowHeight="50" id="KsE-Y8-cnz" customClass="HomeFriendTableViewCell" customModule="KakaoTalk_Clone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="101" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KsE-Y8-cnz" id="YV0-Jg-Ekw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irx-aZ-KZe">
+                                                    <rect key="frame" x="16" y="4" width="44" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="41" id="VyR-u7-j7U"/>
+                                                        <constraint firstAttribute="width" constant="44" id="elG-PS-miJ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="friendtabProfileImg"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfl-mn-vRJ">
+                                                    <rect key="frame" x="71" y="10" width="21" height="14.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="이름">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="AppleSDGothicNeo-SemiBold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태메시지" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDF-qv-EWp">
+                                                    <rect key="frame" x="71" y="27" width="48" height="13.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
+                                                    <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cfl-mn-vRJ" firstAttribute="leading" secondItem="YV0-Jg-Ekw" secondAttribute="leading" constant="71" id="0H5-Wu-QT4"/>
+                                                <constraint firstItem="irx-aZ-KZe" firstAttribute="top" secondItem="YV0-Jg-Ekw" secondAttribute="top" constant="4" id="HL3-DT-pb3"/>
+                                                <constraint firstItem="Cfl-mn-vRJ" firstAttribute="top" secondItem="YV0-Jg-Ekw" secondAttribute="top" constant="10" id="OqG-hY-pVN"/>
+                                                <constraint firstAttribute="bottom" secondItem="irx-aZ-KZe" secondAttribute="bottom" constant="5" id="Y9z-7i-Ghx"/>
+                                                <constraint firstItem="irx-aZ-KZe" firstAttribute="leading" secondItem="YV0-Jg-Ekw" secondAttribute="leading" constant="16" id="jl2-lk-Qra"/>
+                                                <constraint firstItem="IDF-qv-EWp" firstAttribute="leading" secondItem="YV0-Jg-Ekw" secondAttribute="leading" constant="71" id="nVe-9j-vuc"/>
+                                                <constraint firstItem="IDF-qv-EWp" firstAttribute="top" secondItem="YV0-Jg-Ekw" secondAttribute="top" constant="27" id="vXT-Ef-RMO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="IDF-qv-EWp" id="EYq-Pn-pll"/>
+                                            <outlet property="nameLabel" destination="Cfl-mn-vRJ" id="Alw-YI-ZEA"/>
+                                            <outlet property="profileImage" destination="irx-aZ-KZe" id="XvR-PG-OuB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMb-D0-XS4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-u6-gjz">
+                                        <rect key="frame" x="14" y="15" width="39" height="27"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keK-Rh-hRV">
+                                        <rect key="frame" x="380" y="17" width="19" height="22"/>
+                                        <state key="normal" image="settingIcon"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="keK-Rh-hRV" secondAttribute="trailing" constant="15" id="7Vw-b0-xBx"/>
+                                    <constraint firstAttribute="height" constant="52" id="7kf-QS-e9r"/>
+                                    <constraint firstItem="wLI-u6-gjz" firstAttribute="leading" secondItem="UMb-D0-XS4" secondAttribute="leading" constant="14" id="AmY-xo-K4w"/>
+                                    <constraint firstItem="wLI-u6-gjz" firstAttribute="top" secondItem="UMb-D0-XS4" secondAttribute="top" constant="15" id="Bwg-NC-a1F"/>
+                                    <constraint firstItem="keK-Rh-hRV" firstAttribute="top" secondItem="UMb-D0-XS4" secondAttribute="top" constant="17" id="rZr-qf-ASJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wLI-u6-gjz" firstAttribute="leading" secondItem="43n-fK-mxJ" secondAttribute="leading" constant="14" id="RNl-JC-uT9"/>
-                            <constraint firstItem="wLI-u6-gjz" firstAttribute="top" secondItem="43n-fK-mxJ" secondAttribute="top" constant="15" id="Ry9-vl-QZP"/>
-                            <constraint firstItem="Zgc-er-Ap4" firstAttribute="top" secondItem="wLI-u6-gjz" secondAttribute="bottom" constant="18" id="TVv-e7-56r"/>
-                            <constraint firstItem="Zgc-er-Ap4" firstAttribute="leading" secondItem="43n-fK-mxJ" secondAttribute="leading" constant="13" id="pSj-0F-Uh1"/>
+                            <constraint firstItem="UMb-D0-XS4" firstAttribute="leading" secondItem="43n-fK-mxJ" secondAttribute="leading" id="00J-CZ-1cR"/>
+                            <constraint firstItem="hqz-17-4d6" firstAttribute="top" secondItem="UMb-D0-XS4" secondAttribute="bottom" id="CSH-Of-GuI"/>
+                            <constraint firstItem="43n-fK-mxJ" firstAttribute="trailing" secondItem="UMb-D0-XS4" secondAttribute="trailing" id="KLt-fU-zrP"/>
+                            <constraint firstItem="43n-fK-mxJ" firstAttribute="bottom" secondItem="hqz-17-4d6" secondAttribute="bottom" id="MoT-X3-vtG"/>
+                            <constraint firstItem="hqz-17-4d6" firstAttribute="leading" secondItem="43n-fK-mxJ" secondAttribute="leading" id="eyM-ed-iGS"/>
+                            <constraint firstItem="43n-fK-mxJ" firstAttribute="trailing" secondItem="hqz-17-4d6" secondAttribute="trailing" id="vrH-0a-uPq"/>
+                            <constraint firstItem="UMb-D0-XS4" firstAttribute="top" secondItem="43n-fK-mxJ" secondAttribute="top" id="yKb-l1-V09"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="43n-fK-mxJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="friendTabIcon" selectedImage="friendTabIconSelected" id="0ev-Gy-Bdg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="friendListTableView" destination="hqz-17-4d6" id="Kza-fr-MIX"/>
+                        <outlet property="myTabHeaderView" destination="jvA-kU-Glb" id="SgQ-VG-CeV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvw-Yn-vzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493" y="202"/>
+            <point key="canvasLocation" x="509" y="-7"/>
         </scene>
         <!--MyTab-->
         <scene sceneID="BYP-Vc-1yb">
@@ -58,5 +182,6 @@
         <image name="friendTabIcon" width="18" height="20"/>
         <image name="friendTabIconSelected" width="18" height="20"/>
         <image name="friendtabProfileImg" width="59" height="58"/>
+        <image name="settingIcon" width="19" height="19"/>
     </resources>
 </document>
