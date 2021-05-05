@@ -29,7 +29,24 @@ class HomeTabViewController: UIViewController {
         
     }
     
-   
+    @IBAction func settingButtonClicked(_ sender: Any) {
+        let alertController = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+        let editAction = UIAlertAction(title: "편집", style: .default) { (action) in
+            
+        }
+        let manageAction = UIAlertAction(title: "친구 관리", style: .default) { (action) in
+            
+        }
+        let settingAllAction = UIAlertAction(title: "전체 설정", style: .default) { (action) in
+            
+        }
+        alertController.addAction(editAction)
+        alertController.addAction(manageAction)
+        alertController.addAction(settingAllAction)
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        present(alertController, animated: false, completion: nil)
+    }
+    
     // 추후 ViewController에서
     // private var friendList:[FriendDataModel] = []
     // 로 선언한 다음에 사용하세요!!!

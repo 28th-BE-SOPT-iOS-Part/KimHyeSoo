@@ -134,6 +134,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keK-Rh-hRV">
                                         <rect key="frame" x="380" y="17" width="19" height="22"/>
                                         <state key="normal" image="settingIcon"/>
+                                        <connections>
+                                            <action selector="settingButtonClicked:" destination="3el-dC-xzM" eventType="touchUpInside" id="fga-qz-Uwj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
