@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		15B2C9662641C7310094F3B9 /* HomeFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2C9652641C7310094F3B9 /* HomeFriendTableViewCell.swift */; };
 		15B2C96826427B1E0094F3B9 /* FriendListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2C96726427B1E0094F3B9 /* FriendListData.swift */; };
+		15E2D04E2643205D00EA3536 /* EtcCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2D04D2643205D00EA3536 /* EtcCollectionViewCell.swift */; };
+		15E2D050264320DC00EA3536 /* EtcTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2D04F264320DC00EA3536 /* EtcTabViewController.swift */; };
+		15E2D054264324EB00EA3536 /* EtcLabelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2D053264324EB00EA3536 /* EtcLabelData.swift */; };
 		15F18ACA26308ED400300E65 /* KakaoHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F18AC926308ED400300E65 /* KakaoHome.storyboard */; };
 		15F18ACC26308F5000300E65 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F18ACB26308F5000300E65 /* HomeTab.storyboard */; };
 		15FB5047261B46F2007DA7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB5046261B46F2007DA7B7 /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 /* Begin PBXFileReference section */
 		15B2C9652641C7310094F3B9 /* HomeFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFriendTableViewCell.swift; sourceTree = "<group>"; };
 		15B2C96726427B1E0094F3B9 /* FriendListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListData.swift; sourceTree = "<group>"; };
+		15E2D04D2643205D00EA3536 /* EtcCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcCollectionViewCell.swift; sourceTree = "<group>"; };
+		15E2D04F264320DC00EA3536 /* EtcTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcTabViewController.swift; sourceTree = "<group>"; };
+		15E2D053264324EB00EA3536 /* EtcLabelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcLabelData.swift; sourceTree = "<group>"; };
 		15F18AC926308ED400300E65 /* KakaoHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KakaoHome.storyboard; sourceTree = "<group>"; };
 		15F18ACB26308F5000300E65 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		15FB5043261B46F2007DA7B7 /* KakaoTalk-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KakaoTalk-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +141,9 @@
 				15FB504C261B46F2007DA7B7 /* Main.storyboard */,
 				15F18AC926308ED400300E65 /* KakaoHome.storyboard */,
 				15FD8042263096AA007F2267 /* EtcTab.storyboard */,
+				15E2D053264324EB00EA3536 /* EtcLabelData.swift */,
+				15E2D04F264320DC00EA3536 /* EtcTabViewController.swift */,
+				15E2D04D2643205D00EA3536 /* EtcCollectionViewCell.swift */,
 				15FD80402630964F007F2267 /* ShopTab.storyboard */,
 				15FD803E263093B6007F2267 /* TagTab.storyboard */,
 				15F18ACB26308F5000300E65 /* HomeTab.storyboard */,
@@ -312,12 +321,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				15FB504B261B46F2007DA7B7 /* ViewController.swift in Sources */,
+				15E2D04E2643205D00EA3536 /* EtcCollectionViewCell.swift in Sources */,
 				15B2C9662641C7310094F3B9 /* HomeFriendTableViewCell.swift in Sources */,
 				15FB5047261B46F2007DA7B7 /* AppDelegate.swift in Sources */,
 				15FB5049261B46F2007DA7B7 /* SceneDelegate.swift in Sources */,
 				15B2C96826427B1E0094F3B9 /* FriendListData.swift in Sources */,
 				15FD804726309D10007F2267 /* MainTabBarController.swift in Sources */,
+				15E2D050264320DC00EA3536 /* EtcTabViewController.swift in Sources */,
 				15FB5079261B4C27007DA7B7 /* SecondViewController.swift in Sources */,
+				15E2D054264324EB00EA3536 /* EtcLabelData.swift in Sources */,
 				15FD804D26315FE5007F2267 /* HomeTabViewController.swift in Sources */,
 				15FD804B263154E3007F2267 /* MyTabViewController.swift in Sources */,
 				15FB507B261B4C2E007DA7B7 /* ThirdViewController.swift in Sources */,

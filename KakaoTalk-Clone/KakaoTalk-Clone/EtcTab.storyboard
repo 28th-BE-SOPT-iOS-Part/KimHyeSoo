@@ -4,29 +4,180 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Etc Tab View Controller-->
         <scene sceneID="7vc-oX-uic">
             <objects>
-                <viewController id="asf-FM-OFU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EtcTabViewController" id="asf-FM-OFU" customClass="EtcTabViewController" customModule="KakaoTalk_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yg3-Kg-qV0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjX-7w-4Tm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASH-oy-kww">
+                                        <rect key="frame" x="14" y="15" width="58" height="27"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="더보기">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="AppleSDGothicNeo-SemiBold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-tc-6A8">
+                                        <rect key="frame" x="380" y="17" width="19" height="22"/>
+                                        <state key="normal" image="settingIcon"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="d0N-tc-6A8" secondAttribute="trailing" constant="15" id="NEH-oE-cMQ"/>
+                                    <constraint firstItem="d0N-tc-6A8" firstAttribute="top" secondItem="MjX-7w-4Tm" secondAttribute="top" constant="17" id="UOU-3T-Lw1"/>
+                                    <constraint firstAttribute="height" constant="52" id="oju-O8-KKI"/>
+                                    <constraint firstItem="ASH-oy-kww" firstAttribute="leading" secondItem="MjX-7w-4Tm" secondAttribute="leading" constant="14" id="qx3-fa-Qk4"/>
+                                    <constraint firstItem="ASH-oy-kww" firstAttribute="top" secondItem="MjX-7w-4Tm" secondAttribute="top" constant="15" id="vGJ-np-Snw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZX-r8-s6T">
+                                <rect key="frame" x="0.0" y="96" width="414" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koa-bd-tqL">
+                                        <rect key="frame" x="13" y="8" width="43" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="43" id="E1G-Xo-Law"/>
+                                            <constraint firstAttribute="height" constant="42" id="JPM-c3-yID"/>
+                                        </constraints>
+                                        <state key="normal" image="friendtabProfileImg"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-cd-Gr7">
+                                        <rect key="frame" x="64" y="13" width="55.5" height="19.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="킴씨워터">
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-SemiBold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvR-WU-Y24">
+                                        <rect key="frame" x="65" y="32" width="88.5" height="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="kimseawater@sopt">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="koa-bd-tqL" firstAttribute="leading" secondItem="qZX-r8-s6T" secondAttribute="leading" constant="13" id="2im-aJ-XVa"/>
+                                    <constraint firstItem="E7o-cd-Gr7" firstAttribute="top" secondItem="qZX-r8-s6T" secondAttribute="top" constant="13" id="72j-e6-Z8P"/>
+                                    <constraint firstItem="E7o-cd-Gr7" firstAttribute="leading" secondItem="qZX-r8-s6T" secondAttribute="leading" constant="64" id="BKx-V6-3M3"/>
+                                    <constraint firstItem="pvR-WU-Y24" firstAttribute="leading" secondItem="qZX-r8-s6T" secondAttribute="leading" constant="65" id="Fnt-jW-cNJ"/>
+                                    <constraint firstItem="koa-bd-tqL" firstAttribute="top" secondItem="qZX-r8-s6T" secondAttribute="top" constant="8" id="Pum-wC-sAi"/>
+                                    <constraint firstAttribute="height" constant="63" id="fcJ-io-Z7E"/>
+                                    <constraint firstItem="pvR-WU-Y24" firstAttribute="top" secondItem="qZX-r8-s6T" secondAttribute="top" constant="32" id="rzj-4d-Oyr"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1L6-kk-D9x">
+                                <rect key="frame" x="19" y="178" width="376" height="635"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nFU-Sh-Sx7">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EtcCollectionViewCell" id="C0O-Xk-cMW" customClass="EtcCollectionViewCell" customModule="KakaoTalk_Clone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MwB-gS-RZA">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdX-CM-trN">
+                                                    <rect key="frame" x="25" y="19" width="78" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="5Qe-bm-vK6"/>
+                                                        <constraint firstAttribute="height" constant="20" id="kDv-Sf-9Jj"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="messageTabIcon"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-EY-sm2">
+                                                    <rect key="frame" x="0.0" y="47" width="128" height="13.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="w8G-EY-sm2" secondAttribute="trailing" id="20x-7A-xoB"/>
+                                                <constraint firstAttribute="trailing" secondItem="zdX-CM-trN" secondAttribute="trailing" constant="25" id="Iik-W5-gAP"/>
+                                                <constraint firstItem="zdX-CM-trN" firstAttribute="leading" secondItem="MwB-gS-RZA" secondAttribute="leading" constant="25" id="X57-Vf-E3M"/>
+                                                <constraint firstItem="w8G-EY-sm2" firstAttribute="leading" secondItem="MwB-gS-RZA" secondAttribute="leading" id="aRl-bt-6iq"/>
+                                                <constraint firstItem="zdX-CM-trN" firstAttribute="top" secondItem="MwB-gS-RZA" secondAttribute="top" constant="19" id="jU4-9c-UN4"/>
+                                                <constraint firstItem="w8G-EY-sm2" firstAttribute="top" secondItem="zdX-CM-trN" secondAttribute="bottom" constant="8" id="wsW-mp-jHL"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="etcIcon" destination="zdX-CM-trN" id="5V2-2L-hq3"/>
+                                            <outlet property="etcLabel" destination="w8G-EY-sm2" id="d7W-yc-nrc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1L6-kk-D9x" firstAttribute="top" secondItem="qZX-r8-s6T" secondAttribute="bottom" constant="19" id="2Iw-KA-eIP"/>
+                            <constraint firstItem="Epu-0C-j3j" firstAttribute="trailing" secondItem="qZX-r8-s6T" secondAttribute="trailing" id="D6Q-CF-6eZ"/>
+                            <constraint firstItem="1L6-kk-D9x" firstAttribute="leading" secondItem="Epu-0C-j3j" secondAttribute="leading" constant="19" id="FqO-yR-MAv"/>
+                            <constraint firstItem="Epu-0C-j3j" firstAttribute="bottom" secondItem="1L6-kk-D9x" secondAttribute="bottom" id="GM7-0D-hYq"/>
+                            <constraint firstItem="Epu-0C-j3j" firstAttribute="trailing" secondItem="MjX-7w-4Tm" secondAttribute="trailing" id="bnv-LJ-frZ"/>
+                            <constraint firstItem="qZX-r8-s6T" firstAttribute="top" secondItem="MjX-7w-4Tm" secondAttribute="bottom" id="bo4-98-u1u"/>
+                            <constraint firstItem="qZX-r8-s6T" firstAttribute="leading" secondItem="Epu-0C-j3j" secondAttribute="leading" id="dN3-kE-0fW"/>
+                            <constraint firstItem="Epu-0C-j3j" firstAttribute="trailing" secondItem="1L6-kk-D9x" secondAttribute="trailing" constant="19" id="ibs-NH-4y6"/>
+                            <constraint firstItem="MjX-7w-4Tm" firstAttribute="leading" secondItem="Epu-0C-j3j" secondAttribute="leading" id="s8o-J3-6sC"/>
+                            <constraint firstItem="MjX-7w-4Tm" firstAttribute="top" secondItem="Epu-0C-j3j" secondAttribute="top" id="snZ-c6-Iz8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Epu-0C-j3j"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="detailTabIcon" selectedImage="detailTabIconSelected" id="grg-W4-a7K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="etcCollectionView" destination="1L6-kk-D9x" id="p9F-u1-kuG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMs-6i-1cG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="-210"/>
+            <point key="canvasLocation" x="534.78260869565224" y="-210.26785714285714"/>
         </scene>
     </scenes>
     <resources>
         <image name="detailTabIcon" width="21" height="5"/>
         <image name="detailTabIconSelected" width="21" height="5"/>
+        <image name="friendtabProfileImg" width="59" height="58"/>
+        <image name="messageTabIcon" width="20.5" height="19.5"/>
+        <image name="settingIcon" width="19" height="19"/>
     </resources>
 </document>
