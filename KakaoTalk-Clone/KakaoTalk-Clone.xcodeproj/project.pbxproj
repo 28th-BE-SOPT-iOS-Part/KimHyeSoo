@@ -84,7 +84,7 @@
 		15FD804426309AD4007F2267 /* MyTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyTab.storyboard; sourceTree = "<group>"; };
 		15FD804626309D10007F2267 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		15FD804A263154E3007F2267 /* MyTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabViewController.swift; sourceTree = "<group>"; };
-		15FD804C26315FE5007F2267 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTabViewController.swift; path = ../HomeTabViewController.swift; sourceTree = "<group>"; };
+		15FD804C26315FE5007F2267 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +112,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15E2D0552644802C00EA3536 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				15FB504C261B46F2007DA7B7 /* Main.storyboard */,
+				15FB5076261B4C1E007DA7B7 /* FirstViewController.swift */,
+				15FB5078261B4C27007DA7B7 /* SecondViewController.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		15E2D0562644804D00EA3536 /* KaKaoHomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				15E2D04D2643205D00EA3536 /* EtcCollectionViewCell.swift */,
+				15B2C9652641C7310094F3B9 /* HomeFriendTableViewCell.swift */,
+				15E2D0582644808800EA3536 /* ViewController */,
+				15E2D0572644807600EA3536 /* StoryBoard */,
+			);
+			path = KaKaoHomeTab;
+			sourceTree = "<group>";
+		};
+		15E2D0572644807600EA3536 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				15F18AC926308ED400300E65 /* KakaoHome.storyboard */,
+				15F18ACB26308F5000300E65 /* HomeTab.storyboard */,
+				15FD804426309AD4007F2267 /* MyTab.storyboard */,
+				15FD803C263092A3007F2267 /* ChatTab.storyboard */,
+				15FD80402630964F007F2267 /* ShopTab.storyboard */,
+				15FD803E263093B6007F2267 /* TagTab.storyboard */,
+				15FD8042263096AA007F2267 /* EtcTab.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		15E2D0582644808800EA3536 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15FD804C26315FE5007F2267 /* HomeTabViewController.swift */,
+				15FD804A263154E3007F2267 /* MyTabViewController.swift */,
+				15E2D04F264320DC00EA3536 /* EtcTabViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		15FB503A261B46F2007DA7B7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,27 +180,14 @@
 		15FB5045261B46F2007DA7B7 /* KakaoTalk-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				15E2D0562644804D00EA3536 /* KaKaoHomeTab */,
+				15E2D0552644802C00EA3536 /* LoginPage */,
 				15FB5046261B46F2007DA7B7 /* AppDelegate.swift */,
 				15FB5048261B46F2007DA7B7 /* SceneDelegate.swift */,
 				15FB504A261B46F2007DA7B7 /* ViewController.swift */,
-				15FB504C261B46F2007DA7B7 /* Main.storyboard */,
-				15F18AC926308ED400300E65 /* KakaoHome.storyboard */,
-				15FD8042263096AA007F2267 /* EtcTab.storyboard */,
 				15E2D053264324EB00EA3536 /* EtcLabelData.swift */,
-				15E2D04F264320DC00EA3536 /* EtcTabViewController.swift */,
-				15E2D04D2643205D00EA3536 /* EtcCollectionViewCell.swift */,
-				15FD80402630964F007F2267 /* ShopTab.storyboard */,
-				15FD803E263093B6007F2267 /* TagTab.storyboard */,
-				15F18ACB26308F5000300E65 /* HomeTab.storyboard */,
 				15B2C96726427B1E0094F3B9 /* FriendListData.swift */,
-				15B2C9652641C7310094F3B9 /* HomeFriendTableViewCell.swift */,
-				15FD804C26315FE5007F2267 /* HomeTabViewController.swift */,
-				15FD803C263092A3007F2267 /* ChatTab.storyboard */,
-				15FD804426309AD4007F2267 /* MyTab.storyboard */,
-				15FD804A263154E3007F2267 /* MyTabViewController.swift */,
 				15FD804626309D10007F2267 /* MainTabBarController.swift */,
-				15FB5076261B4C1E007DA7B7 /* FirstViewController.swift */,
-				15FB5078261B4C27007DA7B7 /* SecondViewController.swift */,
 				15FB507A261B4C2E007DA7B7 /* ThirdViewController.swift */,
 				15FB504F261B46F2007DA7B7 /* Assets.xcassets */,
 				15FB5051261B46F2007DA7B7 /* LaunchScreen.storyboard */,
