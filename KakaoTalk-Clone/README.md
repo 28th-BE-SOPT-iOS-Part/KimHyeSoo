@@ -50,8 +50,62 @@
 
 <img src="https://user-images.githubusercontent.com/68391767/115888689-294aa080-a48e-11eb-8aed-c20a3f07e61c.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/115888602-0fa95900-a48e-11eb-9d9e-b08d9880cfbc.gif" width="300">
 
+<br><br>
+
+# 3주차 과제 - 데이터전달, tableView, CollectionView
+
+## 결과
+
+### 1. (과제1) tableView를 활용하여 친구목록 만들기
+
+완료!!!! headerview를 이용했습니다.
+
+<img src="https://user-images.githubusercontent.com/68391767/117372141-07c4cc80-af04-11eb-86fb-ebfd3d2f423f.png" width="300">
+
+<br>
+
+### 2. (과제2) 해당 tableView에서 셀 클릭했을 때 사진/이름 넘기기
+
+delegate로 할려다가 넘 어려워서 segue prepare 메소드 이용했습니다..
+
+<br>
+
+그리고.. 
+일단 친구 목록 사진과 이름은 넘겼는데 문제점을 발견했습니다.. 
+1. 프사 사진 크기.. 왜이러죠..
+2. 이거 하니까 친구목록은 보내지는데 헤더뷰에 제 프로필 사진 버튼 누르면 안뜨는 문제.. 어디가 잘못된건지 코드를 찬찬히 봐야겠군요.
+
+<img src="https://user-images.githubusercontent.com/68391767/117372765-0647d400-af05-11eb-9f76-7b2738e7ea9b.gif" width="300">
 
 
 
 
+<br>
+
+### 3. (과제3) collectionView를 활용하여 더보기 탭 구성
+
+완료!!
+
+
+<img src="https://user-images.githubusercontent.com/68391767/117372826-24153900-af05-11eb-86f9-dfb46c1cc2b4.png" width="300">
+
+<br>
+
+### 4. (도전과제1) Actionsheet
+
+완료!!!
+
+<img src="https://user-images.githubusercontent.com/68391767/117373017-76565a00-af05-11eb-8d00-9b20e2488020.png" width="300">
+
+### 5. (도전과제2) TableView Swipe
+
+완료!!
+
+<img src="https://user-images.githubusercontent.com/68391767/117373239-d0571f80-af05-11eb-9e5b-8cf4bfefb9c8.gif" width="300">
+
+<br> 
+
+### 6. (도전과제6) Contextual menu
+
+To be continue...
 
