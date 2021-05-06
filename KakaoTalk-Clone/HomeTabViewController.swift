@@ -108,6 +108,25 @@ extension HomeTabViewController  : UITableViewDelegate {
     func tableView(_tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
         return 50
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let block = UIContextualAction(style: .normal, title: "차단") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            
+            success(true)
+        }
+        block.backgroundColor = .systemRed
+        
+        
+        let hide = UIContextualAction(style: .normal, title: "숨김") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            print("Share 클릭 됨")
+            success(true)
+        }
+        hide.backgroundColor = .systemGray
+        
+        //actions배열 인덱스 0이 왼쪽에 붙어서 나옴
+        return UISwipeActionsConfiguration(actions:[block, hide])
+    }
 }
 
 extension HomeTabViewController : UITableViewDataSource {
