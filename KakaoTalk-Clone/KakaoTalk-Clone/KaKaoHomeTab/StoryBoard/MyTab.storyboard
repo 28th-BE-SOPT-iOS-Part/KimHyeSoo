@@ -10,7 +10,7 @@
         <!--My Tab View Controller-->
         <scene sceneID="5x4-Xo-coo">
             <objects>
-                <viewController storyboardIdentifier="MyTabViewController" id="Iut-wl-oNE" customClass="MyTabViewController" customModule="Assignment_week1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyTabViewController" id="Iut-wl-oNE" customClass="MyTabViewController" customModule="KakaoTalk_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxD-1s-bet">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,17 +18,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaZ-dN-Evm">
                                 <rect key="frame" x="158.66666666666666" y="486" width="97" height="96"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileUserImg" translatesAutoresizingMaskIntoConstraints="NO" id="nnd-fr-4DQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBv-zF-n9L">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="96"/>
-                                    </imageView>
+                                        <state key="normal" image="profileUserImg"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="nnd-fr-4DQ" firstAttribute="leading" secondItem="KaZ-dN-Evm" secondAttribute="leading" id="3Lk-q5-wwb"/>
-                                    <constraint firstAttribute="bottom" secondItem="nnd-fr-4DQ" secondAttribute="bottom" id="C2s-IE-SZs"/>
+                                    <constraint firstItem="wBv-zF-n9L" firstAttribute="leading" secondItem="KaZ-dN-Evm" secondAttribute="leading" id="BOs-Q8-aoK"/>
+                                    <constraint firstItem="wBv-zF-n9L" firstAttribute="top" secondItem="KaZ-dN-Evm" secondAttribute="top" id="Gf9-zG-I9h"/>
                                     <constraint firstAttribute="width" constant="97" id="Tdv-nd-unR"/>
-                                    <constraint firstAttribute="trailing" secondItem="nnd-fr-4DQ" secondAttribute="trailing" id="aug-xb-uQ8"/>
+                                    <constraint firstAttribute="bottom" secondItem="wBv-zF-n9L" secondAttribute="bottom" id="W0y-OY-9mm"/>
+                                    <constraint firstAttribute="trailing" secondItem="wBv-zF-n9L" secondAttribute="trailing" id="dJ0-Dm-5cW"/>
                                     <constraint firstAttribute="height" constant="96" id="nRb-77-vn1"/>
-                                    <constraint firstItem="nnd-fr-4DQ" firstAttribute="top" secondItem="KaZ-dN-Evm" secondAttribute="top" id="vWW-E7-gSZ"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdk-Sq-NGX">
@@ -160,7 +161,9 @@
                     </view>
                     <connections>
                         <outlet property="modalView" destination="nxD-1s-bet" id="LiW-6N-0vg"/>
+                        <outlet property="nameLabel" destination="pdk-Sq-NGX" id="zl6-Dg-vQ9"/>
                         <outlet property="panGestureRecognizer" destination="33p-5q-B06" id="eOV-WT-cAh"/>
+                        <outlet property="profileImageButton" destination="wBv-zF-n9L" id="ucH-e5-GOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFk-cH-I80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,8 @@ class HomeTabViewController: UIViewController {
     @IBOutlet weak var myTabHeaderView: UIView!
     @IBOutlet weak var friendListTableView: UITableView!
     
+    var nameNow : String = ""
+    // var nowImageName : String = ""
     
     
     var friendList : [FriendListData] = []
@@ -27,6 +29,21 @@ class HomeTabViewController: UIViewController {
         friendListTableView.dataSource = self
         friendListTableView.separatorStyle = .none
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showFriendDetail"{
+        //if segue.destination is MyTabViewController {
+            let vc = segue.destination as? MyTabViewController
+            //vc?.nameText = "왜안돼" // 여기에 cell 에 들어가는 name을 가져와 보자...
+            //vc?.nameText = nameNow
+            let cell = sender as! UITableViewCell
+            let indexPath = friendListTableView.indexPath(for: cell)
+            vc?.nameText = friendList[(indexPath?.row)!].name
+            vc?.imageNameText = friendList[(indexPath?.row)!].imageName
+            
+        }
     }
     
     @IBAction func settingButtonClicked(_ sender: Any) {
@@ -109,6 +126,7 @@ extension HomeTabViewController  : UITableViewDelegate {
         return 50
     }
     
+
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let block = UIContextualAction(style: .normal, title: "차단") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
@@ -131,6 +149,7 @@ extension HomeTabViewController  : UITableViewDelegate {
     // cell 클릭한 효과 나타나자마자 사라지는 메서드
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        nameNow = friendList[indexPath.row].name
     }
 }
 

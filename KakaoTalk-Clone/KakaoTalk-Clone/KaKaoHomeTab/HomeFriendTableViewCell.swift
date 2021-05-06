@@ -17,6 +17,9 @@ class HomeFriendTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
+    var nowSelectedName : String = ""
+    var nowSelectedImage : String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +27,8 @@ class HomeFriendTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        
         // Configure the view for the selected state
     }
     

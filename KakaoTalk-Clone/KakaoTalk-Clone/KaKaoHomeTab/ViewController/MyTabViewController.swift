@@ -10,13 +10,24 @@ import UIKit
 
 class MyTabViewController: UIViewController {
 
+    @IBOutlet weak var profileImageButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var modalView: UIView!
     @IBOutlet var panGestureRecognizer: UIPanGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameLabel.text = nameText
+        if let image = UIImage(named: imageNameText){
+            profileImageButton.setImage(image, for: UIControl.State.normal)
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
+    
+    var nameText : String = ""
+    var imageNameText : String = ""
+    
     
 
         
