@@ -90,3 +90,70 @@ override func prepare(for seuge: UIStoryboardSegue, sender: Any?) {
 // 뷰컨 B (데이터 A->B로 전달)
 var text : String = ""
 ```
+
+<br>
+
+### 3. delegation을 활용한 방식
+
+#### 💎 delegate pattern ?
+
+- '위임하다', '대표하다'라는 뜻을 가진 delegate는 객체 지향 프로그래밍에서 하나의 객체가 모든 일을 하는 것이 아니라, **처리해야 하는 일 중 일부를 다른 객체에게 위임하는 것을 의미**합니다.
+- protocol 형태로 구현됩니다. → [protocol 설명](https://github.com/hyesuuou/iOS-Dev/blob/main/Protocol.md)
+
+#### 💎 delegate 데이터전달 예시
+
+- 프로토콜을 만들어줍니다. `SampleProtocol` 이라는 프로토콜 안에 `dataSend`라는 기능을 만들어주었습니다. (프로토콜이므로 기능에 대한 구현은 하지 않습니다.)
+
+```swift
+protocol SampleProtocol
+{
+    // data라는 String 형을 넘기려고 한다.
+    func dataSend(data : String)
+}
+```
+
+- 데이터가 뷰컨 B → 뷰컨 A로 전달된다고 할 때, 뷰컨 B에서 `SampleProtocol`을 타입으로 하는 `delegate` 프로퍼티를 생성해줍니다.
+
+```swift
+/* SampleProtocol 형의 delegate 프로퍼티를 생성한다.*/
+var delegate : SampleProtocol?
+```
+
+- `delegate?.dataSend(data: text)`를 통해 버튼이 눌렸을 경우 dataSend 기능을 실행해줍니다.
+
+```swift
+@IBAction func dataSendButtonClicked(_ sender: Any) {
+    
+	/* 버튼을 눌렀을 때 delegate의 dataSend에다가 textField의 text를 담아준다.*/
+        if let text = dataTextField.text {
+            /* delegate 사용 */
+            delegate?.dataSend(data: text)
+        }
+    
+        /* 이후 navigation pop 처리*/
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+```
+
+→ 아직까지는 dataSend가 어떻게 일어나는지 구현을 해주지 않았는데, 이 구현을 뷰컨 A에서 해주려고 합니다. 
+
+- 이제 뷰컨 A에 와서 **프로토콜을 채택해줍니다**. 이후 fix를 이용해 필요한 기능을 구현해줍니다. 여기서는 dataSend 구현이 필요하기 때문에 fix를 누르면 바로`dataSend`를 구현하도록 코드가 생깁니다~!
+
+```swift
+/* dataSend 함수에서 data파라미터를 받아서 dataLebl*/
+// delegateDataLabel -> 받은 데이터를 나타낼 
+func dataSend(data: String) {
+  delegateDataLabel.text = data
+}
+```
+
+- 그리고 뷰컨 B의 delegate(대리자) 역할을 뷰컨A (현재뷰컨)에서 하도록 하는 코드를 적어줍니다. 이제 대신 처리할 부분은 뷰컨 A에서 처리하게 됩니다.
+
+```swift
+guard let nextVC = self.storyboard?.instantiateViewController(identifier: "DelegateSecondViewController") as? DelegateSecondViewController else { return }
+        
+        /* 두 번째 뷰컨 (DelegateSeconViewController 가 대신해서 처리할 부분이 현재 뷰컨(self)!*/
+        /* delegate 위임(채택) */
+        nextVC.delegate = self
+```
