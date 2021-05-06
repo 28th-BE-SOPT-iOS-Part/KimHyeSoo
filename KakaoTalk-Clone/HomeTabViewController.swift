@@ -127,6 +127,11 @@ extension HomeTabViewController  : UITableViewDelegate {
         //actions배열 인덱스 0이 왼쪽에 붙어서 나옴
         return UISwipeActionsConfiguration(actions:[block, hide])
     }
+    
+    // cell 클릭한 효과 나타나자마자 사라지는 메서드
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }
 
 extension HomeTabViewController : UITableViewDataSource {
