@@ -109,3 +109,31 @@ delegate로 할려다가 넘 어려워서 segue prepare 메소드 이용했습�
 
 To be continue...
 
+
+# 4주차 과제 - NetWorking
+
+![image](https://user-images.githubusercontent.com/68391767/118280197-ef0d7580-b506-11eb-8007-d2f53196fc3e.png)
+
+## 결과
+
+### 1. (과제1) 회원가입
+
+완료
+
+
+<img src="https://user-images.githubusercontent.com/68391767/118284992-03a03c80-b50c-11eb-8cc8-45e102d4038d.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/118281095-d0f44500-b507-11eb-9aaf-85a32178aba2.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/118285549-86c19280-b50c-11eb-9e6d-25dd31b25834.gif" width="300">
+<br>
+
+### 2. (과제2) 로그인
+
+완료
+
+
+
+<img src="https://user-images.githubusercontent.com/68391767/118284642-9ab8c480-b50b-11eb-9481-43519f5cb2f8.gif" width="300"><img src="https://user-images.githubusercontent.com/68391767/118285364-511ca980-b50c-11eb-966c-78a3aa4f7502.gif" width="300">
+
+<br>
+
+### 3. (도전과제1) 토근저장
+
+to..be..continue..
