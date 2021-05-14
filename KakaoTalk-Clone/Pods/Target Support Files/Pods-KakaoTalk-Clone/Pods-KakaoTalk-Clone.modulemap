@@ -1,0 +1,6 @@
+framework module Pods_KakaoTalk_Clone {
+  umbrella header "Pods-KakaoTalk-Clone-umbrella.h"
+
+  export *
+  module * { export * }
+}
