@@ -157,3 +157,242 @@ guard let nextVC = self.storyboard?.instantiateViewController(identifier: "Deleg
         /* delegate 위임(채택) */
         nextVC.delegate = self
 ```
+
+<br><br>
+
+# TableView?
+
+- ScrollView 를 상속받아 ScrollView의 메서드나 프로퍼티에 접근이 가능합니다.
+- 목록 형태의 뷰 (한 방향으로만 스크롤) 를 구현하는데에 사용합니다.
+- 재사용 큐를 활용하여 메모리를 관리합니다.
+- 아이폰의 설정앱이나, 앱스토어에 있는 앱 목록에서 TableView가 사용된 것을 볼 수 있습니다.
+
+## TableView의 구조
+
+- tableView는 row가 모여 하나의 section이 되고
+- section들이 모여 하나의 tableView를 구성하게 됩니다.
+- 여기서 section은 header와 footer를 가질 수도 있습니다.
+
+![image](https://user-images.githubusercontent.com/68391767/118553431-462b7880-b79b-11eb-8f10-1d7249d35ab4.png)
+
+<br>
+
+## TableView의 스타일
+
+### 1. 테이블 뷰 스타일
+
+- Plain
+- Group
+- Inset Grouped
+
+![image](https://user-images.githubusercontent.com/68391767/118553471-52afd100-b79b-11eb-9659-e686e1589e8c.png)
+
+<br>
+
+### 2. 테이블  뷰 Cell 의 스타일
+
+- Content Only
+- With Accessory View
+    - Accessory View→ 여러 스타일 적용 가능
+        - basic, right detail, subtitle, left detail, + custom
+- In edit mode
+
+![image](https://user-images.githubusercontent.com/68391767/118553507-5f342980-b79b-11eb-8e72-63f09e011709.png)
+
+<br>
+
+## Table View 구현하기
+
+- tableView 를 뷰컨에 추가한 후, 레이아웃을 잡아줍니다.
+- Cell 을 구현합니다.
+    - 방법
+        1. 스토리 보드 내의 TableView Cell 활용
+        2. Xib 파일 따로 분리해서 Cell UI 구성
+        3. Codebase로 Cell 구성
+    - Cell 구분선?
+        - Separator을 사용해서 leftInset, rightInset 조절한다.
+        - UIView를 올려서 height 1로 잡는다
+    - 보이는 셀의 높이 (코드로 다시 구현하기는 해야 함) → 우측 Inspector 메뉴에서 `Row Height` 을 해당 높이로 설정 (스토리보드 예쁘게 보이는 용..)
+- UITableViewCell을 상속받는 클래스 생성
+    - `TableViewCell`을 클릭하고 클래스 지정 + Identifier 지정하기
+- UIViewController를 상속받는 클래스도 생성
+    - 뷰컨선택후 클래스 지정하기
+- `TableViewCell` 하위의 `Content View` 클릭하고 Automatic누른 후 TableViewCell 파일 클릭
+    - TableViewCell 내부의 요소들 IBOutlet으로 선언
+    - Cell을 구분하기 위한`Identifier`를 `static`을 활용해 타입 프로퍼티로 선언
+
+        ```swift
+        // SoptTableViewCell.swift
+        static let identifier : String = "SoptTableViewCell"
+        ```
+
+    - 값을 넣어주는 `setData 함수` 만들기
+
+        ```swift
+        func setData (imageName : String, title : String, subtitle : String)
+        {
+        	if let image = UIImage(named: imageName) {
+        		iconImageView.image = image
+        	}
+        	titleLabel.text = title
+        	subtitleLabel.text = subtitle
+
+        }
+        ```
+
+    - awakeFromNib() ?
+        - 객체가 초기화(인스턴스화)된 후 호출되는 메서드
+        - 뷰컨의 ViewDidLoad()와 비슷한 개념
+        - `Init(coder:)`가 먼저 실행된 후, 호출됨
+            - Init(coder:) 시점 : frame, layer관련없는 값들만 접근 가능
+            - awakeFromNib() 시점 : Frame, Layer, @IBOutlet 관련값 접근 가능
+- 뷰컨 파일 (SoptViewController.swift)을 클릭하고
+    - `TableView`를 `@IBOutlet`으로 선언
+    - 해당 뷰컨의 Extension 만들고, `UITableViewDelegate` & `UITableViewDataSource`채택
+
+        ```swift
+        extension SoptViewController : UITableViewDelegate {
+
+        }
+        extension SoptViewController : UITableViewDataSource {
+
+        }
+        ```
+
+        - `UITableViewDelegate` 프로토콜
+
+           ![image](https://user-images.githubusercontent.com/68391767/118553573-7246f980-b79b-11eb-96bd-2fa1ec2e67d9.png)
+
+            - 화면에 보이는 모습과 행동을 담당 → 테이블 뷰의 동작, 모양 관리
+                - Cell을 터치하면 무엇을 하는지
+
+                    ```swift
+                    func tableView(tableView : UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
+                    ```
+
+                - Cell의 높이
+
+                    ```swift
+                    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+                    ```
+
+                    - 사용예시
+
+                        ```swift
+                        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+                        	return 106   // 한 행당 106의 높이로
+                        }
+                        ```
+
+                - Cell의 들여쓰기
+        - `UITableViewDataSource` 프로토콜
+
+            ![image](https://user-images.githubusercontent.com/68391767/118553594-78d57100-b79b-11eb-87d2-42defaac370a.png)
+
+            - 테이블을 만들 때 필요한 정보(데이터)를 제공
+                - **(필수) Cell 몇 개 그릴지**
+
+                    ```swift
+                    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+                    ```
+
+                    - 사용예시
+
+                        ```swift
+                        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                        	return serviceList.count // serviceList의 원소 수만큼 cell 그림
+                        }
+                        ```
+
+                - **(필수) Cell에 어떤 내용을 담을지**
+
+                    ```swift
+                    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+                    ```
+
+                    - 사용 예시
+
+                     ![image](https://user-images.githubusercontent.com/68391767/118553856-d36ecd00-b79b-11eb-92a2-cd0b8e8967be.png)
+
+                        - withidentifier : tableViewCell에서 작성한 identifier (재사용큐에서 cell을 구분)
+                        - indexPath : 행을 식별하는 인덱스 경로
+                            - indexPath.row : 행 접근 가능
+                            - indexPath.section : 섹션 접근 가능
+                - Section의 타이틀은 뭘로 할지
+- 구조체를 이용해 `새로운 데이터형`(DataModel) 만들기 (ex. ServiceListDataModel.swift)
+
+    ```swift
+    // 이미지이름, 제목, 부제목 담을 데이터형 생성
+    struct ServiceListDataModel
+    {
+    	var iconImageName : String  
+    	var title : String 
+    	var subtitle : String
+    }
+    ```
+
+- 다시 뷰컨파일로 돌아와서 만든 데이터형을 담는 배열 선언하기
+
+    ```swift
+    // SoptViewController.swift
+
+    var serviceList : [ServiceListDataModel] = []
+    ```
+
+    - 선언해준 Array에 임의로 데이터 추가하기 → setServiceList()함수 선언..
+
+        ```swift
+        func setServiceList(){ 
+        	serviceList.append(....)
+        }
+        ```
+
+    - 이후 ViewDidLoad에서 setServiceList를 호출하면 내용 모두 들어가있는 상황이 됨.
+- TableView의 delegate와 dataSource의 위임자를 설정
+    - 자기자신(self)로 설정해줌 → 위임자는 SoptViewController.swift가 된다.
+
+    ```swift
+    override func viewDidLoad(){
+    	super.viewDidLoad()
+    	setServiceList()
+
+    	serviceTableView.delegate = self
+    	serviceTableView.dataSource = self
+    }
+    ```
+
+<br>
+
+## TableView의 크기가 유동적으로 변하도록
+
+KeyWord :  `automaticDimension`
+
+1. 각 height 를 automaticDemansion으로 지정
+
+```swift
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+	return UITableView.automaticDimension
+}
+```
+
+2. 추정치 높이 잡아주기
+
+```swift
+tableView.estimateRowHeight = 100
+```
+
+3. Layout 잡기
+
+<br>
+
+## delegate / Datasource 분리해서 구현하기
+
+→ 비슷한 테이블이 여러 VC에서 쓰일 때 사용하면 좋은 방식
+
+![image](https://user-images.githubusercontent.com/68391767/118553656-8d196e00-b79b-11eb-8819-6afef971a380.png)
+
+```swift
+// FirstTableVC.swift
+let sampleSource = SampleTableDatasource()
+let sampleDelegate = SampleTableDelegate()
+```
