@@ -396,3 +396,164 @@ tableView.estimateRowHeight = 100
 let sampleSource = SampleTableDatasource()
 let sampleDelegate = SampleTableDelegate()
 ```
+
+<br><br>
+
+# CollectionView
+
+- 그리드 형태로 나열된 뷰를 구현할 때 쓰임
+- UIScrollView를 상속받았음
+- Delegate Pattern을 활용해 구현
+- 테이블 뷰 보다 더 복잡하고 다양한 형태로 커스터마이징 가능
+
+## CollectionView 구현하기
+
+- UIViewController 상속받는 클래스 / UICollectionView 상속받는 클래스 각각 생성
+- 스토리보드에 CollectionView 올린 후 layout 설정
+- `Estimate Size` → None으로 설정
+    - Estimate size? → 초기에 셀들의 위치를 임시 배정함
+    - UICollectionViewDelegateFlowLayout 프로토콜을 이용하여 코드로 사이즈를 적어줄거면 None으로 설정해줘야 함
+- View Controller 클래스 매칭
+- `CollectionViewCell` 클릭 후 클래스 매칭 + Identifier 설정
+- Content View 선택 후 Automatic 눌러서 `CollectionViewCell 파일`로 바꾸기
+    - identifier 선언
+
+        ```swift
+        // MusicCollectionViewCell.swift
+        static let identifier : String = "MusicCollectionViewCell"
+        ```
+
+    - 내부 요소들 IBOutlet 연결
+    - `setData` 함수 작성
+
+        ```swift
+        func setData(imageName : String, title: String, subtitle: String) {
+
+        	if let image = UIImage(named: imageName) {
+        		albumImageView.image = image
+        	}
+        	titleLabel.text = title
+        	subtitleLabel.text = subtitle
+
+        }
+        ```
+
+- `ViewController (MusicViewController.swift)`
+    - MusicCollectionView를 @IBOutlet으로 선언
+    - delegate / datasource 를 self로 지정
+
+        ```swift
+        musicCollectionView.delegate = self
+        musicCollectionView.dataSource = self
+        ```
+
+    - 프로토콜 채택
+        - UICollectionViewDataSource
+        - UICollectionViewDelegate
+        - UICollectionViewDelegateFlowLayout
+- `DataModel 구조체` 생성
+
+    ```swift
+    // 사진이름, 노래제목, 가수 담는 데이터형 생성 (MusicDataModel.swift)
+    struct MusicDataModel {
+    	var coverName : String
+    	var musicTitle : String
+    	var singer : String
+    }
+    ```
+
+- `View Controller`
+    - 만든 구조체 타입을 구지는 빈 Array 선언
+
+        ```swift
+        private var musicList : [MusicDataModel] = []
+        ```
+
+    - 빈 Array에 데이터 넣는 setMusicList() 함수 선언
+
+        ```swift
+        func setMusicList(){
+        	musicList.append(...)
+        }
+        ```
+
+    - ViewDidLoad에 setMusicData()를 넣어 뷰가 시작될 때 이미 모두 append 되어있도록 한다.
+- 채택한 프로토콜을 구현한다.
+    - `UICollectionViewDataSource`
+
+        ```swift
+        extension MusicViewController : UICollectionViewDataSource {
+        	
+        	// Cell을 몇 개 만들지
+        	func collectionView(_ collectionView: UICollectionView, numberOfItemInSection section: Int) -> Int {
+        		return musicList.count
+        	}
+        	
+        	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        		guard let musicCell = collectionView.dequeueReusableCell(withReuseIdentifier: MusicCollectionViewCell.identifier, for: indexPath) as? MusicCollectionViewCell else { return UICollectionViewCell() }
+
+        		musicCell.setData(imageName: musicList[indexPath.row].coverName,
+        											title : musicList[indexPath.row].musicTitle,
+        											subtitle: musicList[indexPath.row].singer)
+        		return musicCell
+        	}
+
+        }
+        ```
+
+    - `UICollectionViewDelegateFlowLayout`
+        - Cell의 간격, 크기를 결정한다.
+        - 자주 사용하는 메서드
+            - `sizeForItemAt`
+                - 각 Cell의 크기 결정
+                - 각 Cell 들의 크기를 CGSize 형태로 return gksek.
+                - indexPath를 가져오면 row나 section별로 다르게 크기를 지정도 가능
+            - `ContentInset`
+                - Cell에서 외부에 존재하는 Inset의 크기를 결정
+
+                    ```swift
+                    return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+                    ```
+
+                    ![image](https://user-images.githubusercontent.com/68391767/118554449-690a5c80-b79c-11eb-8380-ec1de0d91449.png)
+		    
+		    
+            - `minimumLineSpacing`
+                - Cell 들의 위, 아래 간격 지정
+            - `minimumInteritemSpacing`
+                - Cell 들의 좌우 간격 지정
+
+            ![image](https://user-images.githubusercontent.com/68391767/118554425-61e34e80-b79c-11eb-9851-d5b576613cd4.png)
+
+        ```swift
+        extension MusicViewController : UICollectionViewDelegateFlowLayout {
+
+        	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        		// 현재 실행되고 있는 기기의 width 가져와서 저장
+        		let width = UIScreen.main.bounds.width
+        		
+
+        		let cellWidth = width*(177/375)
+        		let cellHeight = cellWidth * (205/177)
+
+        		return CGSize(width: cellWidth, height: cellHeight)
+        	}
+
+        	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        		return UIEdgeInsets.zero /// inset 사용x->zero
+        	}
+
+        	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        		return 5  // 상하 5포인트
+        	}
+
+        	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        		return 3  // 좌우 3포인트
+        	} 
+
+        }
+        ```
+
+       ![image](https://user-images.githubusercontent.com/68391767/118554394-58f27d00-b79c-11eb-9045-c80c211bb308.png)
+       
