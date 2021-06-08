@@ -12,5 +12,5 @@
 |4주차|Cocoapods & Networking + 솝커톤 전 보충 세미나|[4주차세미나](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/Seminar/SOPT-seminar-4#readme)|[4주차과제](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#4%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---networking)|
 |5주차|디자인 합동 세미나|||
 |6주차|서버 합동 세미나 + 솝커톤|||
-|7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충|||
+|7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충|[7주차세미나](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/Seminar/SOPT-seminar-7#readme)| 과제없음~~ |
 |8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드|||
