@@ -13,4 +13,4 @@
 |5주차|디자인 합동 세미나|[당근마켓리드미](https://github.com/Be-Daangn/Be-Daangn-iOS#readme)|[당근마켓레포](https://github.com/Be-Daangn)|
 |6주차|서버 합동 세미나 + 솝커톤|[고도의전략리드미](https://github.com/28th-SOPKATON/SOPKATON-iOS#readme)|[고도의전략](https://github.com/28th-SOPKATON)|
 |7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충|[7주차세미나](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/Seminar/SOPT-seminar-7#readme)| 과제없음~~ |
-|8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드|||
+|8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드|세미나끝!!!!!!|😂|
