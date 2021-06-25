@@ -70,10 +70,6 @@ delegate로 할려다가 넘 어려워서 segue prepare 메소드 이용했습�
 
 <br>
 
-그리고.. 
-일단 친구 목록 사진과 이름은 넘겼는데 문제점을 발견했습니다.. 
-1. 프사 사진 크기.. 왜이러죠..
-2. 이거 하니까 친구목록은 보내지는데 헤더뷰에 제 프로필 사진 버튼 누르면 안뜨는 문제.. 어디가 잘못된건지 코드를 찬찬히 봐야겠군요.
 
 <img src="https://user-images.githubusercontent.com/68391767/117372765-0647d400-af05-11eb-9f76-7b2738e7ea9b.gif" width="300">
 
@@ -107,7 +103,7 @@ delegate로 할려다가 넘 어려워서 segue prepare 메소드 이용했습�
 
 ### 6. (도전과제6) Contextual menu
 
-To be continue...
+
 
 
 <br><br>
@@ -138,4 +134,4 @@ To be continue...
 
 ### 3. (도전과제1) 토근저장
 
-to..be..continue..
+
