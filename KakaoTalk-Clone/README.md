@@ -5,10 +5,10 @@
 |2주차|Autolayout을 통한 기초 UI구성, Scroll View의 이해| [2주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---view-autolayout-scrollview) ||
 |3주차|TableView, CollectionView, 데이터 전달 방식| [3주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/blob/main/KakaoTalk-Clone/README.md#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%EB%8B%AC-tableview-collectionview)|
 |4주차|Cocoapods & Networking + 솝커톤 전 보충 세미나|[4주차과제결과](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/KakaoTalk-Clone#4%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C---networking)|
-|5주차|디자인 합동 세미나||
-|6주차|서버 합동 세미나 + 솝커톤||
-|7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충||
-|8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드||
+|5주차|디자인 합동 세미나|합동세미나 과제 완료!|
+|6주차|서버 합동 세미나 + 솝커톤|합동세미나 과제 완료!|
+|7주차|클론 코딩을 통한 실전 UI 구성, Animation, 통신 보충|과제없음!!|
+|8주차|기획 경선 + 앱잼 전 보충 세미나 + 앱스토어 배포 가이드|과제없음!!|
 
 
 #  1주차 과제 - 기본UI요소, 화면전환
